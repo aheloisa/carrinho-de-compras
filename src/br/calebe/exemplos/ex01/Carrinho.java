@@ -14,7 +14,25 @@ public class Carrinho {
     public void add(Produto produto) {
         produtos.add(produto);
     }
-
+    
+    public void retornaTodos(){
+        for (Produto produto : produtos) {
+            System.out.println(produto);
+        }
+    }
+    
+    public void remove(Produto produto) {
+        produtos.remove(produto);
+    }
+    
+    public double precoTotal(){
+        double total = 0.0;
+        for (Produto produto : produtos) {
+            total += produto.getPreco();
+        }
+        return total;
+    }
+    
     public Produto menorProduto() throws CarrinhoVazioExpected {
         if (produtos.isEmpty()) {
             throw new CarrinhoVazioExpected();

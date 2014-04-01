@@ -2,8 +2,8 @@ package br.calebe.exemplos.ex01;
 
 public class Produto {
 
-    private String nome;
-    private double preco;
+    protected String nome;
+    protected double preco;
 
     public Produto(String nome, double preco) {
         this.nome = nome;
@@ -21,5 +21,10 @@ public class Produto {
 
     public boolean equals(Produto obj) {
         return nome.equals(obj.nome);
+    }
+    
+    @Override
+    public String toString(){
+        return "Produto:" + nome + " " + "Preço:" + preco;
     }
 }
