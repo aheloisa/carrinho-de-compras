@@ -22,7 +22,7 @@ public class CarrinhoTest {
 
     @Test
     public void colocandoUmProduto() throws CarrinhoVazioExpected {
-        Produto livro = new Produto("Java em 24 horas", 50.00);
+        Livro livro = new Livro("Java em 24 horas", 50.00, "José");
         carrinho.add(livro);
         Produto menor;
         menor = carrinho.menorProduto();
@@ -31,13 +31,13 @@ public class CarrinhoTest {
 
     @Test
     public void colocandoMaisProdutos() throws CarrinhoVazioExpected {
-        Produto livro = new Produto("Java em 24 horas", 50.00);
+        Livro livro = new Livro("Java em 24 horas", 50.00, "José");
         carrinho.add(livro);
-        Produto deitel = new Produto("Java: como programar", 150.00);
-        carrinho.add(deitel);
+        Caneta bic = new Caneta("bic azul", 1.50, "Azul");
+        carrinho.add(bic);
         Produto menor;
         menor = carrinho.menorProduto();
-        assertArrayEquals(new Object[]{livro}, new Object[]{menor});
+        assertArrayEquals(new Object[]{bic}, new Object[]{menor});
     }
 
     @Test
