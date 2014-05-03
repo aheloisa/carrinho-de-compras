@@ -20,6 +20,10 @@ public class Carrinho {
             System.out.println(produto);
         }
     }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
     
     public void remove(Produto produto) {
         produtos.remove(produto);
